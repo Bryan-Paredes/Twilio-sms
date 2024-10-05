@@ -1,6 +1,10 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 export default function Page() {
+  const router = useRouter();
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -21,10 +25,8 @@ export default function Page() {
       },
     });
     const data = await res.json();
-
-    console.log(data);
-
     alert("Message sent!");
+    router.refresh();
   };
 
   return (

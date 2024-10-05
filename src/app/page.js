@@ -26,7 +26,7 @@ export default function Page() {
     });
     const data = await res.json();
     alert("Message sent!");
-    router.refresh();
+    router.push("/");
   };
 
   return (
